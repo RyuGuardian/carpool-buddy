@@ -1,8 +1,10 @@
+require('dotenv').load({silent: true}); //loads environment variables defined in .env; for use in development; detects that .env exists
+
 var express = require('express');
 var app = express();
 var mongoose = require('mongoose');
 var jsonParser = require('body-parser').json();
-mongoose.connect(process.env.MONGODB_URL || 'mongodb://localhost/carpooldb');
+mongoose.connect(process.env.MONGOLAB_URI || 'mongodb://localhost/carpooldb');
 var port = process.env.PORT || 3000;
 process.env.APP_SECRET = process.env.APP_SECRET || 'unsecure';
 

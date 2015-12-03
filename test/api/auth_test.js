@@ -5,7 +5,7 @@ var chaiHttp = require('chai-http');
 chai.use(chaiHttp);
 var expect = chai.expect;
 var mongoose = require('mongoose');
-process.env.MONGODB_URL = 'mongodb://localhost/carpooldb_test'
+process.env.MONGOLAB_URI = 'mongodb://localhost/carpooldb_test'
 
 require(__dirname + '/../../server.js');
 var httpBasic = require(__dirname + '/../../lib/http_basic');
